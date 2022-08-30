@@ -1,0 +1,140 @@
+@use "../../variables" as v;
+#navbar {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  padding: 5px 20px;
+  box-shadow: 0px 6px 8px v.$primary-color-shadow;
+  .brand {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    .brand_logo {
+      margin: 0px 10px;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .brand_title {
+      h2 {
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+      }
+      p {
+        font-size: 0.6rem;
+      }
+    }
+  }
+  .menu-bar {
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    align-items: center;
+    height: 38px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: v.$primary-color;
+    margin: 10px;
+    z-index: 3;
+    right: 14px;
+    top: 9px;
+    i {
+      font-size: 1.1rem;
+    }
+  }
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 90px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transform: translate(-50%, 0);
+    background-color: v.$primary-color;
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    z-index: 2;
+    overflow-y: scroll;
+    // clip-path: circle(0px at calc(100% - 15px) 20px);
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    &.active {
+      // top: 0px;
+      // clip-path: circle(100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    li {
+      margin: 15px 20px;
+      .nav_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 16px;
+        font-size: 1.1rem;
+        color: v.$white-color;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #navbar {
+    .brand {
+      .brand_logo {
+        margin: 0px 10px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .brand_title {
+        h2 {
+          margin-bottom: 8px;
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    .menu-bar {
+      display: none;
+    }
+    .nav_list {
+      flex-direction: row;
+      width: 100%;
+      position: initial;
+      left: 0;
+      transform: translate(0, 0);
+      height: 100%;
+      overflow-y: visible;
+      background-color: transparent;
+      //   padding: 20px 20px 20px 5px;
+      clip-path: none;
+      justify-content: center;
+      li {
+        .nav_link {
+          color: v.$black-shade;
+          font-size: 0.9rem;
+          &:hover {
+            background-color: v.$primary-light;
+            border: none;
+            color: v.$primary-color;
+          }
+        }
+        i {
+          margin-right: 0;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
