@@ -1,22 +1,35 @@
 @use "../../variables" as v;
 #navbar {
+  position: fixed;
+  top: 0px;
   width: 100%;
   height: 90px;
   display: flex;
-  padding: 5px 20px;
+  padding: 5px 0px;
   box-shadow: 0px 6px 8px v.$primary-color-shadow;
+  z-index: 10;
+  background-color: v.$white-color;
+  justify-content: center;
+  .brand_logo {
+    height: fit-content;
+    margin: auto 10px auto 0px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
   .brand {
     display: flex;
-    flex-basis: 100%;
+    // flex-basis: 100%;
     align-items: center;
-    .brand_logo {
-      margin: 0px 10px;
-      img {
-        width: 60px;
-        height: 60px;
-      }
+    width: fit-content;
+    justify-content: center;
+    &.engg_logo {
+      flex-basis: 10%;
     }
     .brand_title {
+      // display: none;
+      width: 200px;
       h2 {
         margin-bottom: 8px;
         font-size: 0.9rem;
@@ -24,6 +37,11 @@
       p {
         font-size: 0.6rem;
       }
+      @media only screen and (min-width: 450px) {
+        width: 100%;
+      }
+    }
+    @media only screen and (min-width: 400px) {
     }
   }
   .menu-bar {
@@ -38,7 +56,7 @@
     background-color: v.$primary-color;
     margin: 10px;
     z-index: 3;
-    right: 14px;
+    right: 3px;
     top: 9px;
     i {
       font-size: 1.1rem;
@@ -80,28 +98,33 @@
         color: v.$white-color;
         border-radius: 20px;
         transition: background-color 0.3s ease;
+        i {
+          margin-right: 5px;
+        }
       }
     }
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 860px) {
   #navbar {
     .brand {
+      flex-basis: 40%;
       .brand_logo {
         margin: 0px 10px;
         img {
-          width: 80px;
-          height: 80px;
+          width: 60px;
+          height: 60px;
         }
       }
       .brand_title {
+        width: 100%;
         h2 {
           margin-bottom: 8px;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
         p {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
         }
       }
     }
@@ -120,10 +143,15 @@
       //   padding: 20px 20px 20px 5px;
       clip-path: none;
       justify-content: center;
+      flex-basis: 50%;
       li {
+        margin: 8px 10px;
+        position: relative;
         .nav_link {
           color: v.$black-shade;
           font-size: 0.9rem;
+          padding: 12px 20px;
+          z-index: -1;
           &:hover {
             background-color: v.$primary-light;
             border: none;
@@ -131,8 +159,9 @@
           }
         }
         i {
-          margin-right: 0;
-          padding: 5px;
+          margin-right: 5px;
+          // padding: 5px;
+          // display: none;
         }
       }
     }

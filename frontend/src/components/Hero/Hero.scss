@@ -1,0 +1,153 @@
+@use "../../variables" as v;
+
+#hero {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  width: 100%;
+  height: fit-content;
+  margin-top: 110px;
+  .hero_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+    .typewriter {
+      color: v.$primary-color;
+    }
+    .hero_btn {
+      padding: 12px 20px;
+      color: v.$white-color;
+      background-color: v.$third-color;
+      border-radius: 50px;
+      margin: 10px 0px;
+      position: relative;
+      width: 165px;
+      text-align: left;
+      transition: width 0.4s;
+      font-size: 1.1rem;
+      i {
+        position: absolute;
+        opacity: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: all 0.2s ease-out;
+        right: 20px;
+      }
+      &:hover {
+        width: 170px;
+        i {
+          display: inline;
+          opacity: 1;
+          right: 15px;
+        }
+      }
+    }
+  }
+  .hero_img {
+    overflow: auto;
+    width: 95%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    height: 180px;
+    margin: 0px auto;
+    border-radius: 12px;
+    // box-shadow: 0px 6px 10px v.$black-shade;
+    @media only screen and (min-width: 450px) {
+      & {
+        position: relative;
+        scroll-snap-align: center;
+      }
+      img {
+        position: absolute;
+        height: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        $zindex: 9;
+        &.pos1 {
+          z-index: $zindex;
+        }
+        $leftmar: -70px;
+        $rightmar: -40px;
+        @for $i from 2 to 10 {
+          &.pos#{$i} {
+            $zindex: $zindex - 1;
+            &.left {
+              z-index: #{$zindex};
+              transform: translate($leftmar, 0);
+              $leftmar: $leftmar - 40px;
+            }
+            &.right {
+              z-index: #{$zindex};
+              transform: translate($rightmar, 0);
+              $rightmar: $rightmar + 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 850px) {
+    flex-direction: row;
+    height: 60vh;
+    position: relative;
+    .hero_content {
+      margin: 0;
+      flex-basis: 25%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 30px;
+      // position: absolute;
+      h3 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 2.4rem;
+        margin: 10px 0px;
+      }
+      .hero_btn {
+        margin-top: 30px;
+      }
+    }
+    .hero_img {
+      width: 100%;
+      height: 350px;
+      flex-basis: 75%;
+      justify-content: flex-end;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      img {
+        $zindex: 9;
+        &.pos1 {
+          z-index: $zindex;
+        }
+        $leftmar: -130px;
+        $rightmar: -50px;
+        @media only screen and (min-width: 1050px) {
+          $leftmar: -170px;
+          $rightmar: -80px;
+        }
+
+        @for $i from 2 to 10 {
+          &.pos#{$i} {
+            $zindex: $zindex - 1;
+            &.left {
+              z-index: #{$zindex};
+              transform: translate($leftmar, 0);
+              $leftmar: $leftmar - 50px;
+            }
+            &.right {
+              z-index: #{$zindex};
+              transform: translate($rightmar, 0);
+              $rightmar: $rightmar + 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
