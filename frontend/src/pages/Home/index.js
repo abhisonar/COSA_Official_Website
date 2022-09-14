@@ -9,7 +9,7 @@ const Home = () => {
       {/* <div className="scroll_more">
         <i class="fa-solid fa-angle-up"></i>
       </div> */}
-      <Event />
+      {/* <Event /> */}
     </div>
   );
 };

@@ -24,7 +24,7 @@ const Hero = () => {
         <h3>&nbsp;We are</h3>
         <h2 className="typewriter">&nbsp;{text}</h2>
         <NavLink to="/about-us" className="hero_btn">
-          Explore COSA <i class="fa-solid fa-arrow-right-long"></i>
+          Explore Events <i className="fa-solid fa-arrow-right-long"></i>
         </NavLink>
       </div>
       <div className="hero_img">

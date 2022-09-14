@@ -1,7 +1,7 @@
 import React from "react";
-
+import "./index.scss";
 const GoverningBody = () => {
-  return <div>GoverningBody</div>;
+  return <section id="members"></section>;
 };
 
 export default GoverningBody;

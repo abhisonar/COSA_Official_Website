@@ -43,8 +43,8 @@ const Event = () => {
   return (
     <section id="event">
       <Slider {...settings}>
-        {EventData.map((h) => (
-          <div className="event_slide">
+        {EventData.map((h, index) => (
+          <div className="event_slide" key={index}>
             <div className="event_img">
               <img src={h.event_img} alt="" />
             </div>

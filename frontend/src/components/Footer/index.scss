@@ -1,0 +1,215 @@
+@use "../../variables" as v;
+#footer {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (min-width: 800px) {
+    height: 350px;
+  }
+  .footer_top {
+    flex-basis: 90%;
+    background-color: v.$footer-color1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0px;
+    @media only screen and (min-width: 800px) {
+      flex-direction: row;
+    }
+    .footer_brand {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: v.$white-color;
+      margin-top: 10px;
+      .footer_brand_img {
+        width: fit-content;
+        margin-bottom: 10px;
+        img {
+          width: 80px;
+          height: 100%;
+        }
+      }
+      h3 {
+        text-align: center;
+        padding: 0px 20px;
+      }
+      p {
+        text-align: center;
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+      }
+      @media only screen and (min-width: 800px) {
+        flex-basis: 36%;
+      }
+    }
+    .footer_seperator {
+      height: 1px;
+      width: 80%;
+      background-color: v.$footer-gray;
+      border-radius: 100px;
+      margin: 10px 0px;
+      @media only screen and (min-width: 800px) {
+        height: 80%;
+        width: 1px;
+        margin: 0px 10px;
+      }
+    }
+    .footer_links {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+      @media only screen and (min-width: 800px) {
+        flex-direction: column;
+        height: 50%;
+      }
+      a {
+        color: v.$footer-gray;
+      }
+      height: 50px;
+      @media only screen and (min-width: 800px) {
+        flex-basis: 36%;
+      }
+    }
+    .footer_social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: v.$white-color;
+      p {
+        margin: 10px 0px;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+      .footer_social_links {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        a {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0px 8px;
+          border-radius: 50%;
+          box-shadow: 0px 5px 5px rgba($color: v.$white-color, $alpha: 0.6);
+          transition: all 0.4s;
+          i {
+            color: v.$white-color;
+          }
+          &:hover {
+            transform: translate(0, -10px);
+          }
+          &:nth-child(1) {
+            background-color: #3b5998;
+            @media only screen and (min-width: 800px) {
+              background-color: v.$white-color;
+              i {
+                color: black;
+              }
+              transition: all 0.4s;
+              &:hover {
+                background-color: #3b5998;
+                i {
+                  color: v.$white-color;
+                }
+              }
+            }
+          }
+          &:nth-child(2) {
+            background: radial-gradient(
+              circle at 30% 107%,
+              #fdf497 0%,
+              #fdf497 5%,
+              #fd5949 45%,
+              #d6249f 60%,
+              #285aeb 90%
+            );
+            @media only screen and (min-width: 800px) {
+              background: v.$white-color;
+              i {
+                color: black;
+              }
+              transition: all 0.4s;
+              &:hover {
+                background: radial-gradient(
+                  circle at 30% 107%,
+                  #fdf497 0%,
+                  #fdf497 5%,
+                  #fd5949 45%,
+                  #d6249f 60%,
+                  #285aeb 90%
+                );
+                i {
+                  color: v.$white-color;
+                }
+              }
+            }
+          }
+          &:nth-child(3) {
+            background-color: #ff0000;
+            @media only screen and (min-width: 800px) {
+              background-color: v.$white-color;
+              i {
+                color: black;
+              }
+              transition: all 0.4s;
+              &:hover {
+                background-color: #ff0000;
+                i {
+                  color: v.$white-color;
+                }
+              }
+            }
+          }
+          &:nth-child(4) {
+            background-color: #0e76a8;
+            @media only screen and (min-width: 800px) {
+              background-color: v.$white-color;
+              i {
+                color: black;
+              }
+              transition: all 0.4s;
+              &:hover {
+                background-color: #0e76a8;
+                i {
+                  color: v.$white-color;
+                }
+              }
+            }
+          }
+
+          @media only screen and (min-width: 800px) {
+            background-color: v.$white-color;
+            i {
+              color: black;
+            }
+          }
+        }
+      }
+      @media only screen and (min-width: 800px) {
+        flex-basis: 36%;
+      }
+    }
+  }
+  .footer_bottom {
+    flex-basis: 10%;
+    background-color: v.$footer-color2;
+    color: v.$footer-gray;
+    padding: 10px;
+    p {
+      text-align: center;
+      margin: 10px 0px;
+      font-size: 0.8rem;
+      a {
+        color: v.$white-color;
+      }
+    }
+  }
+}

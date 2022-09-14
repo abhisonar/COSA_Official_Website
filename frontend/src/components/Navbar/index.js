@@ -71,11 +71,11 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/about-us"
+            to="/cosa-store"
             className="nav_link"
             onClick={closeMobileMenu}
           >
-            <i class="fa-solid fa-circle-info"></i>About Us
+            <i class="fa-solid fa-shirt"></i> Store
           </NavLink>
         </li>
       </ul>

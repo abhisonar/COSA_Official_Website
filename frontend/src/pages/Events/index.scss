@@ -1,0 +1,46 @@
+@use "../../variables" as v;
+.events {
+  margin-top: 100px;
+
+  .all_events {
+    display: flex;
+    flex-direction: column;
+
+    &.upcoming_events {
+      margin-bottom: 20px;
+    }
+    .events_title {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0px 20px;
+      align-items: center;
+      h2 {
+        font-size: 1.2rem;
+      }
+      a {
+        color: v.$primary-color;
+      }
+    }
+    .events_cards {
+      //   padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+      @media only screen and (min-width: 800px) {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .no_events {
+        height: 100px;
+        width: 90%;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
